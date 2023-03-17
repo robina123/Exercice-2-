@@ -5,7 +5,7 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 800
 
 COLORS = [arcade.color.BLUE, arcade.color.FANDANGO_PINK,
-         arcade.color.FRENCH_ROSE, arcade.color.GOLDEN_POPPY,
+          arcade.color.FRENCH_ROSE, arcade.color.GOLDEN_POPPY,
           arcade.color.GREEN, arcade.color.LIGHT_BLUE,
           arcade.color.LIGHT_PINK, arcade.color.LIGHT_YELLOW,
           arcade.color.MEDIUM_BLUE, arcade.color.MEDIUM_RED_VIOLET]
@@ -44,12 +44,14 @@ class MyGame(arcade.Window):
     def on_mouse_press(self, x, y, button, modifiers):
         if button == arcade.MOUSE_BUTTON_LEFT:
             for cercle in self.liste_cercles:
-                if cercle.center_x - cercle.rayon <= x <= cercle.center_x + cercle.rayon and cercle.center_y - cercle.rayon <= y <= cercle.center_y + cercle.rayon:
+                if cercle.center_x - cercle.rayon <= x <= cercle.center_x + cercle.rayon and cercle.center_y -\
+                        cercle.rayon <= y <= cercle.center_y + cercle.rayon:
                     self.liste_cercles.remove(cercle)
 
         elif button == arcade.MOUSE_BUTTON_RIGHT:
             for cercle in self.liste_cercles:
-                if cercle.center_x - cercle.rayon <= x <= cercle.center_x + cercle.rayon and cercle.center_y - cercle.rayon <= y <= cercle.center_y + cercle.rayon:
+                if cercle.center_x - cercle.rayon <= x <= cercle.center_x + cercle.rayon and cercle.center_y -\
+                        cercle.rayon <= y <= cercle.center_y + cercle.rayon:
                     cercle.color = random.choice(COLORS)
 
 
